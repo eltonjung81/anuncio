@@ -2,35 +2,45 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Anúncio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Carrossel Tela Inteira</title>
   <style>
+    /* Remove margens padrão */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Container do carrossel ocupa a tela toda */
     .carousel {
       display: flex;
       overflow: hidden;
-      width: 100%;
-      max-width: 600px;
-      margin: auto;
-      border: 2px solid #ccc;
-      border-radius: 8px;
+      width: 100vw;   /* largura da viewport */
+      height: 100vh;  /* altura da viewport */
     }
+
+    /* Cada slide ocupa a tela inteira */
     .slide {
       min-width: 100%;
+      height: 100%;
       transition: transform 0.5s ease;
     }
+
+    /* Imagem ajustada para cobrir a tela */
     .carousel img {
       width: 100%;
+      height: 100%;
+      object-fit: cover; /* cobre a tela sem distorcer */
       display: block;
     }
   </style>
 </head>
 <body>
-  <h1>Meu Anúncio</h1>
-
   <div class="carousel">
-    <div class="slide"><img src="foto 1.jpg" alt="foto 1"></div>
-    <div class="slide"><img src="foto 2.jpg" alt="Foto 2"></div>
-    <div class="slide"><img src="foto 3.jpg" alt="Foto 3"></div>
+    <div class="slide"><img src="anuncio.jpg" alt="Anúncio"></div>
+    <div class="slide"><img src="foto2.jpg" alt="Foto 2"></div>
+    <div class="slide"><img src="foto3.jpg" alt="Foto 3"></div>
   </div>
 
   <script>
@@ -48,11 +58,12 @@
       showSlide(currentIndex);
     }
 
-    setInterval(nextSlide, 2000); // troca a cada 3 segundos
+    setInterval(nextSlide, 3000); // troca a cada 3 segundos
     showSlide(currentIndex);
   </script>
 </body>
 </html>
+
 
 
 
