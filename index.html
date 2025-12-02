@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Carrossel Tela Inteira</title>
   <style>
-    /* Remove margens padrão */
     body, html {
       margin: 0;
       padding: 0;
@@ -12,26 +11,23 @@
       width: 100%;
     }
 
-    /* Container do carrossel ocupa a tela toda */
     .carousel {
       display: flex;
       overflow: hidden;
-      width: 100vw;   /* largura da viewport */
-      height: 100vh;  /* altura da viewport */
+      width: 100vw;
+      height: 100vh;
     }
 
-    /* Cada slide ocupa a tela inteira */
     .slide {
       min-width: 100%;
       height: 100%;
       transition: transform 0.5s ease;
     }
 
-    /* Imagem ajustada para cobrir a tela */
     .carousel img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* cobre a tela sem distorcer */
+      object-fit: cover;
       display: block;
     }
   </style>
@@ -63,17 +59,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
