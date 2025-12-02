@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anúncio</title>
+  <meta charset="UTF-8">
+  <title>Meu Anúncio</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
+    .carousel {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #000;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #ccc;
+      border-radius: 8px;
     }
-    img {
-      max-width: 100%;
-      max-height: 100vh;
+    .slide {
+      min-width: 100%;
+      transition: transform 0.5s ease;
+    }
+    .carousel img {
+      width: 100%;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <img src="anuncio.jpeg" alt="Anúncio" />
+  <h1>Meu Anúncio</h1>
+
+  <div class="carousel">
+    <div class="slide"><img src="anuncio.jpeg" alt="Anúncio"></div>
+    <div class="slide"><img src="foto2.jpeg" alt="Foto 2"></div>
+    <div class="slide"><img src="foto3.jpeg" alt="Foto 3"></div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - index)}%)`;
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 2000); // troca a cada 3 segundos
+    showSlide(currentIndex);
+  </script>
 </body>
 </html>
+
